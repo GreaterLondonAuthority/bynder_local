@@ -5,3 +5,6 @@ bynder_local.settings:
     derivative:
       type: text
       label: 'The asset derivative to store locally'
+    local_image_field:
+      type: text
+      label: 'The machine name of the field that''s used to store the image locally'
