@@ -147,6 +147,8 @@ function bynder_local_get_image_url(array $item) {
     }
   }
   else {
+    // @todo The webimage fall back should is only be temporary in case we can't
+    //   get the original image derivative.
     return $item['thumbnails'][$config->get('derivative')] ?? $item['thumbnails']['webimage'];
   }
 }
