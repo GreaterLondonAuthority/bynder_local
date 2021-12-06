@@ -30,7 +30,7 @@ function bynder_local_media_presave(MediaInterface $media) {
   if ($source instanceof Bynder && $media->hasField($local_field) && !$media->get($local_field)->entity) {
     $source->ensureMetadata($media);
     $item = Json::decode($media->get(BynderMetadataItem::METADATA_FIELD_NAME)->value);
-    $image_url = bynder_local_get_image_url($item);
+    $image_url = $item ? bynder_local_get_image_url($item) : NULL;
 
     if (!$image_url) {
       Drupal::logger('bynder_local')
